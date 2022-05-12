@@ -1,0 +1,15 @@
+burkeholland.simple-react-snippets
+christian-kohler.path-intellisense
+dbaeumer.vscode-eslint
+dsznajder.es7-react-js-snippets
+esbenp.prettier-vscode
+GitHub.copilot
+iocave.customize-ui
+iocave.monkey-patch
+mikestead.dotenv
+ms-azuretools.vscode-docker
+ms-vscode.cpptools
+ms-vscode.sublime-keybindings
+SanaAjani.taskrunnercode
+usernamehw.errorlens
+vscode-icons-team.vscode-icons

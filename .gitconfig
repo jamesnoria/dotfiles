@@ -1,0 +1,8 @@
+[user]
+    email = jnoria.dev@gmail.com
+    name = James Noria
+
+[core]
+	editor = vim
+[commit]
+	gpgsign = true
