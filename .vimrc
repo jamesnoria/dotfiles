@@ -24,7 +24,6 @@ Plug 'frazrepo/vim-rainbow'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
