@@ -1,0 +1,27 @@
+# Archivos de lazy.nvim
+lazy-lock.json
+
+# Archivos de plugins instalados
+plugin/
+
+# Archivos de datos de Neovim
+*.log
+*.tmp
+
+# Archivos de sistema
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Archivos de backup
+*.bak
+*.swp
+*.swo
+*~
+
+# Directorio de plugins de lazy.nvim (se instalan automáticamente)
+lazy/

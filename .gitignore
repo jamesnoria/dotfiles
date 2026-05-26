@@ -1,0 +1,11 @@
+.DS_Store
+*.swp
+*.swo
+Session.vim
+
+# Local/editor state
+nvim/.claude/
+nvim/.codex
+
+# Do not vendor downloaded plugin trees
+tmux/plugins/
