@@ -20,8 +20,6 @@ cd ~/dotfiles
 ./install.sh
 ```
 
-Si publicas el repo con otro nombre, cambia la URL del `git clone`.
-
 ## Requisitos recomendados
 
 ```bash
