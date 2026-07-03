@@ -1,0 +1,52 @@
+export ZSH="$HOME/.oh-my-zsh"
+
+# >>> Codex installer >>>
+export PATH="$HOME/.local/bin:$PATH"
+# <<< Codex installer <<<
+
+ZSH_THEME="robbyrussell"
+
+plugins=(
+  git
+  kubectl
+)
+
+source "$ZSH/oh-my-zsh.sh"
+
+# === aliases ===
+alias cl="clear"
+alias gs="git status -s"
+alias up="sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y"
+alias e="exit"
+alias awsp="source _awsp"
+alias update-aws="bash ~/.aws/update-aws.sh"
+alias ls="eza --icons"
+#alias k="kubecolor"
+alias ports='ss -tulnp | grep "LISTEN"'
+alias t="tmux new-session -A -s devlab"
+
+# === apps ===
+alias tf="terraform"
+alias inf="infisical"
+alias sonar-scanner="source /etc/profile.d/sonar-scanner.sh && sonar-scanner"
+alias nv="nvim"
+
+# === scripts ===
+alias awslog="bash ~/personal/scripts/bash/aws_logs_viewer.sh"
+
+# === neovim ===
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
+# === nvm ===
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+eval "$(starship init zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(zoxide init zsh)"
+
+# Attach to the default tmux session when opening a terminal.
+[[ -z "$TMUX" ]] && t

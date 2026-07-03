@@ -79,6 +79,7 @@ main() {
   link_path "$DOTFILES_DIR/lazygit/config.yml" "$HOME/.config/lazygit/config.yml"
   link_path "$DOTFILES_DIR/tmux/tmux.conf" "$HOME/.tmux.conf"
   link_path "$DOTFILES_DIR/tmux/tmux.conf.local" "$HOME/.tmux.conf.local"
+  link_path "$DOTFILES_DIR/zsh/zshrc" "$HOME/.zshrc"
 
   ensure_tpm
 
