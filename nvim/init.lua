@@ -12,6 +12,7 @@ vim.opt.number = true
 -- vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
+vim.opt.clipboard = "unnamedplus"
 
 -- Search
 vim.opt.ignorecase = true
@@ -24,18 +25,6 @@ vim.opt.list = true
 vim.opt.listchars = {
   space = '·',
   trail = '•',
-}
-
-vim.g.clipboard = {
-  name = "OSC 52",
-  copy = {
-    ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
-    ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
-  },
-  paste = {
-    ["+"] = function() return {} end,
-    ["*"] = function() return {} end,
-  },
 }
 
 vim.api.nvim_create_autocmd({ "FocusLost", "BufLeave", "InsertLeave" }, {

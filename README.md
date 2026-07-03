@@ -24,7 +24,7 @@ cd ~/dotfiles
 ## Requisitos recomendados
 
 ```bash
-sudo apt install git tmux neovim ripgrep fd-find
+sudo apt install git tmux neovim ripgrep fd-find xclip
 ```
 
 En macOS:
