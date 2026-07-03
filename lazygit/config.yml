@@ -1,0 +1,7 @@
+gui:
+  nerdFontsVersion: "3"
+  showFileIcons: true
+  showFileTree: false
+  theme:
+    selectedLineBgColor:
+      - "#303030"

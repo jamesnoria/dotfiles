@@ -1,10 +1,11 @@
 # Dotfiles
 
-Configuracion personal de Neovim y tmux.
+Configuracion personal de Neovim, tmux y LazyGit.
 
 ## Que incluye
 
 - `nvim/`: configuracion completa de Neovim con `lazy.nvim`.
+- `lazygit/config.yml`: configuracion de LazyGit con iconos Nerd Fonts.
 - `tmux/tmux.conf`: configuracion principal de tmux.
 - `tmux/tmux.conf.local`: configuracion local/tema que ya usabas.
 - `install.sh`: instalador que crea backups, enlaza archivos y descarga TPM si falta.
@@ -35,13 +36,14 @@ brew install git tmux neovim ripgrep fd
 ## Actualizar el repo con cambios locales
 
 Como el instalador crea symlinks, los cambios hechos en `~/.config/nvim`,
-`~/.tmux.conf` o `~/.tmux.conf.local` apuntan a este repo.
+`~/.config/lazygit/config.yml`, `~/.tmux.conf` o `~/.tmux.conf.local`
+apuntan a este repo.
 
 ```bash
 cd ~/dotfiles
 git status
-git add nvim tmux install.sh README.md
-git commit -m "Update nvim and tmux config"
+git add nvim lazygit tmux install.sh README.md
+git commit -m "Update dotfiles configuration"
 git push
 ```
 
