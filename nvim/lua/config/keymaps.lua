@@ -44,8 +44,8 @@ map("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
 map("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic" })
 
 vim.keymap.set("n", "<leader>f", function()
-  vim.lsp.buf.format({ async = true })
-end)
+  require("conform").format({ async = true, lsp_format = "fallback" })
+end, { desc = "Format file" })
 
 -- lazygit
 map("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "Open LazyGit" })

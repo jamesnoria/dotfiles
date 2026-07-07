@@ -6,6 +6,7 @@ Mi configuración personal de Neovim con lazy.nvim, LSP, Telescope y más.
 
 - **Plugin Manager**: lazy.nvim
 - **LSP**: Soporte completo con nvim-lspconfig y Mason
+- **Formato**: Formatters gestionados por Mason y ejecutados con conform.nvim
 - **Fuzzy Finder**: Telescope para búsqueda de archivos y contenido
 - **File Explorer**: Neo-tree
 - **Sintaxis**: Treesitter para highlighting mejorado
@@ -98,6 +99,18 @@ Luego instala los LSP servers que necesites, por ejemplo:
 - `rust_analyzer` - Rust
 - `gopls` - Go
 
+### Instalar Formatters
+
+Los formatters principales se instalan automáticamente con Mason:
+- `stylua` - Lua
+- `prettier` - JavaScript/TypeScript/HTML/CSS/JSON/YAML/Markdown
+- `black` - Python
+
+Puedes revisar el estado del formateo con:
+```vim
+:ConformInfo
+```
+
 ### Verificar Salud
 
 ```vim
@@ -132,6 +145,7 @@ Luego instala los LSP servers que necesites, por ejemplo:
 - `K` - Mostrar documentación
 - `<leader>ca` - Acciones de código
 - `<leader>rn` - Renombrar símbolo
+- `<leader>f` - Formatear archivo
 
 ### Git
 - `<leader>gb` - Toggle git blame
