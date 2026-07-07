@@ -132,12 +132,23 @@ Puedes revisar el estado del formateo con:
 
 ### Neo-tree
 - `<C-n>` - Toggle Neo-tree
-- `a` - Crear archivo/carpeta
+- `<leader>nt` - Revelar archivo actual en Neo-tree
+- `<leader>nr` - Restablecer Neo-tree al archivo actual
+- `<leader>nf` - Enfocar árbol de archivos
+- `<leader>nb` - Ver buffers en Neo-tree
+- `<leader>ng` - Ver estado de Git en Neo-tree
+- `n` - Crear archivo/carpeta
+- `A` - Crear carpeta
 - `d` - Eliminar
 - `r` - Renombrar
 - `y` - Copiar al clipboard
 - `x` - Cortar
 - `p` - Pegar
+- `s` - Abrir en split horizontal
+- `v` - Abrir en split vertical
+- `t` - Abrir en tab
+- `H` - Mostrar/ocultar archivos ocultos
+- `/` - Buscar dentro del árbol
 
 ### LSP
 - `gd` - Ir a definición
