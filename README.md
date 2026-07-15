@@ -95,8 +95,8 @@ brew install git tmux neovim ripgrep fd zsh starship zoxide lazygit git-delta ez
 Una vez instalados los requisitos:
 
 ```bash
-git clone git@github.com:jamesnoria/dotfiles.git ~/dotfiles
-cd ~/dotfiles
+git clone git@github.com:jamesnoria/dotfiles.git ~/personal/dotfiles
+cd ~/personal/dotfiles
 ./install.sh
 ```
 
@@ -107,7 +107,7 @@ Como el instalador crea symlinks, los cambios hechos en `~/.config/nvim`,
 `~/.zshrc` apuntan a este repo.
 
 ```bash
-cd ~/dotfiles
+cd ~/personal/dotfiles
 git status
 git add nvim lazygit tmux zsh install.sh README.md
 git commit -m "Update dotfiles configuration"

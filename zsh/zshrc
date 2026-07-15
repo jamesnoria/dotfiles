@@ -4,6 +4,9 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$PATH"
 # <<< Codex installer <<<
 
+# opencode
+export PATH="$HOME/.opencode/bin:$PATH"
+
 ZSH_THEME="robbyrussell"
 
 plugins=(
@@ -24,13 +27,17 @@ alias ls="eza --icons"
 #alias k="kubecolor"
 alias ports='ss -tulnp | grep "LISTEN"'
 alias t="tmux new-session -A -s devlab"
-alias wifi5="bash ~/dotfiles/scripts/prefer-5g-wifi.sh"
+alias wifi5="bash ~/personal/dotfiles/scripts/prefer-5g-wifi.sh"
+alias fb='filebrowser -r $(pwd) --noauth -d ~/.filebrowser.db'
+alias go="npm start"
 
 # === apps ===
 alias tf="terraform"
 alias inf="infisical"
 alias sonar-scanner="source /etc/profile.d/sonar-scanner.sh && sonar-scanner"
 alias nv="nvim"
+alias lg="lazygit"
+alias oc="opencode"
 
 # === scripts ===
 alias awslog="bash ~/personal/scripts/bash/aws_logs_viewer.sh"
