@@ -1,0 +1,25 @@
+[user]
+  email = contact@jamesnoria.com
+  name = James Noria
+
+[core]
+  editor = nvim
+  pager = delta
+
+[url "git@github-personal:"]
+  insteadOf = git@github.com:
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  wrap-max-lines = 2
+  line-numbers = true
+  side-by-side = true
+  syntax-theme = Dracula
+  navigate = true
+  dark = true
+  minus-style = syntax "#3f2d3d"
+  plus-style = syntax "#2d3f2f"
+  zero-style = syntax
+  hunk-header-style = file line-number syntax

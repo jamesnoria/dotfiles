@@ -1,11 +1,12 @@
 # Dotfiles
 
-Configuracion personal de Neovim, tmux, LazyGit y Zsh.
+Configuracion personal de Neovim, tmux, LazyGit, Git y Zsh.
 
 ## Que incluye
 
 - `nvim/`: configuracion completa de Neovim con `lazy.nvim`.
 - `lazygit/config.yml`: configuracion de LazyGit con iconos Nerd Fonts.
+- `git/`: configuracion de Git para separar repos personales y de trabajo.
 - `tmux/tmux.conf`: configuracion principal de tmux.
 - `tmux/tmux.conf.local`: configuracion local/tema que ya usabas.
 - `zsh/zshrc`: configuracion de Zsh, aliases y herramientas de shell.
@@ -20,7 +21,7 @@ TPM y Lazy se encargan de descargarlos de nuevo.
 
 ```bash
 sudo apt update
-sudo apt install git tmux ripgrep fd-find xclip zsh curl eza
+sudo apt install git tmux ripgrep fd-find xclip zsh curl eza nvim
 chsh -s "$(command -v zsh)"
 ```
 
@@ -103,16 +104,28 @@ cd ~/personal/dotfiles
 ## Actualizar el repo con cambios locales
 
 Como el instalador crea symlinks, los cambios hechos en `~/.config/nvim`,
-`~/.config/lazygit/config.yml`, `~/.tmux.conf`, `~/.tmux.conf.local` o
-`~/.zshrc` apuntan a este repo.
+`~/.config/lazygit/config.yml`, `~/.gitconfig`, `~/.gitconfig-personal`,
+`~/.gitconfig-work`, `~/.tmux.conf`, `~/.tmux.conf.local` o `~/.zshrc`
+apuntan a este repo.
 
 ```bash
 cd ~/personal/dotfiles
 git status
-git add nvim lazygit tmux zsh install.sh README.md
+git add nvim lazygit git tmux zsh install.sh README.md
 git commit -m "Update dotfiles configuration"
 git push
 ```
+
+## Git personal y trabajo
+
+La configuracion principal usa `includeIf`:
+
+- Repos bajo `~/personal/` usan `~/.gitconfig-personal`.
+- Repos bajo `~/work/` usan `~/.gitconfig-work`.
+
+Para GitHub personal, `~/.gitconfig-personal` reescribe `git@github.com:` a
+`git@github-personal:`. El alias SSH esperado esta documentado en
+`git/ssh-config.example`. No se versionan llaves SSH ni tokens.
 
 ## Restaurar backups
 
