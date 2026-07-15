@@ -10,6 +10,9 @@ map("v", "<M-j>", ":m '>+1<cr>gv=gv", { desc = "Move block down" })
 map("n", "<leader>o", "o<Esc>") -- insert line below
 map("n", "<leader>O", "O<Esc>") -- insert line above
 
+map("n", "<leader>z", "u", { desc = "Undo" })
+map("n", "<leader>y", "<C-r>", { desc = "Redo" })
+
 -- Copiar en visual mode
 map("v", "<C-c>", '"+y', { desc = "Copy to clipboard" })
 map("n", "<C-c>", '"+yy', { desc = "Copy line to clipboard" })
