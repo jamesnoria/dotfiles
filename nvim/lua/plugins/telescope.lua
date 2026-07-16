@@ -2,6 +2,7 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     version = "*",
+    cmd = "Telescope",
     dependencies = {
       "nvim-lua/plenary.nvim",
       {
@@ -15,7 +16,6 @@ return {
 
       telescope.setup({
         defaults = {
-          case_mode = "smart_case",
           mappings = {
             i = {
               ["<C-c>"] = actions.close,
@@ -26,9 +26,17 @@ return {
             },
           },
         },
+        extensions = {
+          fzf = {
+            fuzzy = true,
+            override_generic_sorter = true,
+            override_file_sorter = true,
+            case_mode = "smart_case",
+          },
+        },
       })
 
-      telescope.load_extension("fzf")
+      pcall(telescope.load_extension, "fzf")
     end,
   },
 }
