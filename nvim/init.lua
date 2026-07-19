@@ -34,11 +34,27 @@ vim.api.nvim_create_autocmd({ "FocusLost", "BufLeave", "InsertLeave" }, {
       vim.cmd("silent! w")
       local file = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":t")
       if file ~= "" then
-        print("Autosaved: " .. file)
+        vim.notify("Autosaved: " .. file, vim.log.levels.INFO)
       end
     end
   end,
   desc = "Auto save on focus lost / leave",
+})
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+  callback = function()
+    if vim.bo.buftype ~= "" then
+      return
+    end
+
+    local file = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":t")
+    if file == "" then
+      return
+    end
+
+    vim.notify("Saved: " .. file, vim.log.levels.INFO)
+  end,
+  desc = "Notify when file is saved",
 })
 
 vim.diagnostic.config({
