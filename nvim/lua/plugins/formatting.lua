@@ -7,6 +7,7 @@ return {
         "stylua",
         "prettier",
         "black",
+        "tree-sitter-cli",
       },
     },
   },
