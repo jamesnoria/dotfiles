@@ -22,9 +22,13 @@ TPM y Lazy se encargan de descargarlos de nuevo.
 
 ```bash
 sudo apt update
-sudo apt install git tmux ripgrep fd-find xclip zsh curl eza nvim unzip python3.12-venv
+sudo apt install git tmux ripgrep fd-find xclip wl-clipboard zsh curl eza nvim unzip python3.12-venv
 chsh -s "$(command -v zsh)"
 ```
+
+En sesiones Wayland, `wl-clipboard` es importante para que Neovim, tmux y apps
+de terminal lean el mismo portapapeles. Si solo esta `xclip`, Neovim puede pegar
+contenido viejo aunque otra app haya copiado texto correctamente.
 
 ### NVM
 
