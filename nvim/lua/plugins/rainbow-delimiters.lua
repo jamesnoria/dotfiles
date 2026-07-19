@@ -27,7 +27,10 @@ return {
 
       set_rainbow_highlights()
 
+      local group = vim.api.nvim_create_augroup("user_rainbow_delimiters", { clear = true })
+
       vim.api.nvim_create_autocmd("ColorScheme", {
+        group = group,
         callback = set_rainbow_highlights,
         desc = "Apply custom rainbow delimiter colors",
       })

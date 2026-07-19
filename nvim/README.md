@@ -12,7 +12,7 @@ Mi configuración personal de Neovim con lazy.nvim, LSP, Telescope y más.
 - **Sintaxis**: Treesitter para highlighting mejorado
 - **Git**: Integración con gitsigns y git-blame
 - **UI**: Lualine, bufferline, dashboard
-- **Utilidades**: Autopairs, indent-blankline, copilot, kulala
+- **Utilidades**: Autopairs, indent-blankline, kulala
 
 ## 📋 Requisitos
 
@@ -179,7 +179,6 @@ Puedes revisar el estado del formateo con:
         ├── neotree.lua
         ├── lualine.lua
         ├── colorscheme.lua
-        ├── copilot.lua
         └── ...
 ```
 

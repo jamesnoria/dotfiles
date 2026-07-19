@@ -27,6 +27,20 @@ map("n", "<leader>w", "<cmd>w<cr>", { desc = "Save file" })
 -- Salir
 map("n", "<leader>q", "<cmd>qa<cr>", { desc = "Quit all" })
 
+map("n", "bd", function()
+  local current = vim.api.nvim_get_current_buf()
+
+  -- ir al siguiente buffer primero
+  vim.cmd("bnext")
+
+  -- cerrar el buffer original
+  vim.cmd("bdelete " .. current)
+end, { desc = "Close buffer safely" })
+
+map("n", "<Esc>", function()
+  vim.cmd("nohlsearch")
+end, { desc = "Clear search highlight" })
+
 -- Splits
 map("n", "<leader>vs", "<cmd>vsplit<cr>", { desc = "Vertical split" })
 map("n", "<leader>hs", "<cmd>split<cr>", { desc = "Horizontal split" })
@@ -50,9 +64,6 @@ vim.keymap.set("n", "<leader>f", function()
   require("conform").format({ async = true, lsp_format = "fallback" })
 end, { desc = "Format file" })
 
--- lazygit
-map("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "Open LazyGit" })
-
 -- Copy file path
 map("n", "<leader>cp", function()
   local path = vim.fn.expand("%:.")
@@ -60,14 +71,11 @@ map("n", "<leader>cp", function()
   vim.notify("Copied: " .. path, vim.log.levels.INFO)
 end, { desc = "Copy file path" })
 
--- Git blame toggle
-map("n", "<leader>gb", "<cmd>GitBlameToggle<cr>", { desc = "Toggle Git Blame" })
-
 -- Preview image with chafa
 map("n", "<leader>pi", function()
   local file = vim.fn.expand("%:p")
   local ext = vim.fn.expand("%:e"):lower()
-  
+
   if ext == "png" or ext == "jpg" or ext == "jpeg" or ext == "gif" or ext == "webp" then
     vim.cmd("terminal chafa --size 80x40 " .. vim.fn.shellescape(file))
   else

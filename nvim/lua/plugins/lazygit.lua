@@ -10,13 +10,16 @@ return {
     "nvim-lua/plenary.nvim",
   },
   keys = {
-    { "<leader>gg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
+    { "<leader>gg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
   },
   config = function()
     vim.g.lazygit_floating_window_scaling_factor = 0.9
-    
+
+    local group = vim.api.nvim_create_augroup("user_lazygit", { clear = true })
+
     -- Allow Ctrl-hjkl to pass through to tmux when in lazygit terminal
     vim.api.nvim_create_autocmd("TermOpen", {
+      group = group,
       pattern = "*lazygit*",
       callback = function()
         vim.keymap.set("t", "<C-h>", "<C-h>", { buffer = true })

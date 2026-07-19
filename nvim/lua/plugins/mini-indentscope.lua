@@ -14,7 +14,10 @@ return {
     config = function(_, opts)
       require("mini.indentscope").setup(opts)
 
+      local group = vim.api.nvim_create_augroup("user_mini_indentscope", { clear = true })
+
       vim.api.nvim_create_autocmd("FileType", {
+        group = group,
         pattern = {
           "help",
           "lazy",
