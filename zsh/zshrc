@@ -40,7 +40,7 @@ alias lg="lazygit"
 alias oc="opencode"
 
 # === scripts ===
-alias awslog="bash ~/personal/scripts/bash/aws_logs_viewer.sh"
+alias awslog="~/personal/dotfiles/scripts/aws_logs_viewer.sh"
 
 # === neovim ===
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
