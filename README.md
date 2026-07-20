@@ -11,6 +11,8 @@ Configuracion personal de Neovim, tmux, LazyGit, Git, Starship y Zsh.
 - `tmux/tmux.conf`: configuracion principal de tmux.
 - `tmux/tmux.conf.local`: configuracion local/tema que ya usabas.
 - `zsh/zshrc`: configuracion de Zsh, aliases y herramientas de shell.
+- `aws/README.md`: guia para recrear la configuracion local de AWS sin secretos.
+- `scripts/update-aws.sh`: script para refrescar sesiones AWS SSO.
 - `install.sh`: instalador que crea backups, enlaza archivos y descarga TPM si falta.
 
 No se versionan plugins descargados, caches ni repos externos dentro de `~/.tmux/plugins`.
