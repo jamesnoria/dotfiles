@@ -28,7 +28,7 @@ map("n", "<leader>w", "<cmd>w<cr>", { desc = "Save file" })
 -- Salir
 map("n", "<leader>q", "<cmd>qa<cr>", { desc = "Quit all" })
 
-map("n", "bd", function()
+map("n", "<leader>bd", function()
   local current = vim.api.nvim_get_current_buf()
 
   -- ir al siguiente buffer primero
