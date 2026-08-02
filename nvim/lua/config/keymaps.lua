@@ -22,6 +22,10 @@ map("n", "<C-c>", '"+yy', { desc = "Copy line to clipboard" })
 map("n", "<C-v>", '"+p', { desc = "Paste from clipboard" })
 map("i", "<C-v>", '<C-r>+', { desc = "Paste from clipboard" })
 
+-- Change without overwriting the system clipboard
+map({ "n", "v" }, "c", '"_c', { desc = "Change without yanking" })
+map({ "n", "v" }, "C", '"_C', { desc = "Change line without yanking" })
+
 -- Guardar
 map("n", "<leader>w", "<cmd>w<cr>", { desc = "Save file" })
 
