@@ -9,6 +9,22 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
+
+if vim.fn.executable("wl-copy") == 1 and vim.fn.executable("wl-paste") == 1 then
+  vim.g.clipboard = {
+    name = "wl-clipboard",
+    copy = {
+      ["+"] = "wl-copy",
+      ["*"] = "wl-copy",
+    },
+    paste = {
+      ["+"] = "wl-paste --no-newline",
+      ["*"] = "wl-paste --no-newline",
+    },
+    cache_enabled = 0,
+  }
+end
+
 vim.opt.clipboard = "unnamedplus"
 
 -- Search

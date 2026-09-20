@@ -20,11 +20,18 @@ map("n", "<C-c>", '"+yy', { desc = "Copy line to clipboard" })
 
 -- Pegar en normal mode
 map("n", "<C-v>", '"+p', { desc = "Paste from clipboard" })
-map("i", "<C-v>", '<C-r>+', { desc = "Paste from clipboard" })
+map("i", "<C-v>", function()
+  vim.api.nvim_paste(vim.fn.getreg("+"), true, -1)
+end, { desc = "Paste from clipboard" })
 
 -- Change without overwriting the system clipboard
+map({ "n", "v" }, "d", '"_d', { desc = "Delete without yanking" })
+map({ "n", "v" }, "D", '"_D', { desc = "Delete line without yanking" })
+map({ "n", "v" }, "x", '"_x', { desc = "Delete character without yanking" })
+map({ "n", "v" }, "X", '"_X', { desc = "Delete character backward without yanking" })
 map({ "n", "v" }, "c", '"_c', { desc = "Change without yanking" })
 map({ "n", "v" }, "C", '"_C', { desc = "Change line without yanking" })
+map("x", "p", '"_dP', { desc = "Paste without yanking replaced text" })
 
 -- Guardar
 map("n", "<leader>w", "<cmd>w<cr>", { desc = "Save file" })

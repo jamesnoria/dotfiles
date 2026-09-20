@@ -65,7 +65,7 @@ install_base_packages() {
 
   info "Instalando paquetes base"
   sudo apt-get update
-  sudo apt-get install -y git tmux ripgrep fd-find xclip zsh curl eza nvim unzip python3.12-venv build-essential cmake
+  sudo apt-get install -y git tmux ripgrep fd-find xclip wl-clipboard zsh curl eza nvim unzip python3.12-venv build-essential cmake
 }
 
 ensure_oh_my_zsh() {

@@ -5,8 +5,7 @@ gui:
   theme:
     selectedLineBgColor:
       - "#303030"
-
 git:
-  pagers:
+  diffRenderers:
     - colorArg: always
-      pager: delta --paging=never
+      command: delta --paging=never
