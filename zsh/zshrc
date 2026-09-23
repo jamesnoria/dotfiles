@@ -17,6 +17,7 @@ plugins=(
 source "$ZSH/oh-my-zsh.sh"
 
 # === aliases ===
+alias subl='"/mnt/d/Users/jnoriav/Documents/sublime_text_build_4200_x64/sublime_text.exe"'
 alias cl="clear"
 alias gs="git status -s"
 alias up="sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y"
