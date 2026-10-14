@@ -6,7 +6,7 @@ Configuracion personal de Neovim, tmux, LazyGit, Git, Starship y Zsh.
 
 - `nvim/`: configuracion completa de Neovim con `lazy.nvim`.
 - `lazygit/config.yml`: configuracion de LazyGit con iconos Nerd Fonts.
-- `opencode/`: configuracion global de OpenCode (plugins, MCP, CLI). El token de GitHub va en la variable `GITHUB_TOKEN`, no en el repo.
+- `opencode/`: configuracion global de OpenCode (plugins, MCP, CLI). El token de GitHub va en `~/.config/opencode/github_token`, no en el repo.
 - `git/`: configuracion de Git para separar repos personales y de trabajo.
 - `starship/starship.toml`: configuracion del prompt Starship.
 - `tmux/tmux.conf`: configuracion principal de tmux.
@@ -117,32 +117,32 @@ brew install git tmux neovim ripgrep fd zsh starship zoxide lazygit git-delta ez
 
 ## OpenCode: token de GitHub
 
-El MCP de GitHub de `opencode/opencode.jsonc` lee el token de la variable de entorno `GITHUB_TOKEN`.
+El MCP de GitHub de `opencode/opencode.jsonc` lee el token del archivo `~/.config/opencode/github_token` (`{file:...}`), no de una variable de entorno.
+Asi funciona igual desde cualquier terminal y desde el servicio de OpenCode, sin `source ~/.profile`.
 `api.githubcopilot.com/mcp` no permite OAuth desde OpenCode, asi que el token es obligatorio.
-El token nunca se guarda en este repo.
+El archivo no esta versionado: el token nunca se guarda en este repo.
 
 1. Crea un token en https://github.com/settings/tokens.
-2. Guardalo en `~/.profile`, que no esta versionado:
+2. Guardalo solo con permisos del usuario (sin salto de linea ni prefijo `Bearer`, ya lo agrega la config):
 
 ```bash
-echo 'export GITHUB_TOKEN="tu_token"' >> ~/.profile
+install -m 600 /dev/null ~/.config/opencode/github_token
+printf '%s' 'tu_token' > ~/.config/opencode/github_token
 ```
 
-3. Cierra sesion y vuelve a entrar, o ejecuta `source ~/.profile`.
-4. Reinicia el servicio de OpenCode desde una terminal que ya tenga la variable:
+3. Reinicia el servicio de OpenCode:
 
 ```bash
 opencode service restart
 ```
 
-5. Comprueba la conexion:
+4. Comprueba la conexion:
 
 ```bash
 opencode mcp list
 ```
 
-OpenCode corre como servicio en segundo plano y hereda las variables de quien lo arranco.
-Si cambias el token, repite el paso 4.
+Si cambias el token, repite los pasos 2 y 3.
 
 ## Instalar los dotfiles
 

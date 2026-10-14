@@ -1,9 +1,10 @@
 {
   "enabledProviders": "auto",
   "formatStyle": "singleWindow",
+  "percentLabelStyle": "bare",
   "showSessionTokens": false,
   "tuiSidebarPanel": { "enabled": true },
   "enableToast": false,
-  "tuiCompactStatus": { "enabled": true, "homeBottom": true, "sessionPrompt": true },
+  "tuiCompactStatus": { "enabled": true, "homeBottom": true, "sessionPrompt": true, "maxWidth": 40 },
   "maintainerAnnouncements": { "enabled": true, "home": true },
 }

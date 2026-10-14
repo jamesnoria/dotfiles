@@ -1,18 +1,17 @@
 {
-  "plugin": [
+  "$schema": "https://opencode.ai/config.json",
+  "plugins": [
     "@slkiser/opencode-quota"
   ],
-  "$schema": "https://opencode.ai/config.json",
-  "instructions": [
-    "instructions.md"
-  ],
   "mcp": {
-    "github": {
-      "type": "remote",
-      "enabled": true,
-      "url": "https://api.githubcopilot.com/mcp/",
-      "headers": {
-        "Authorization": "{env:GITHUB_TOKEN}"
+    "servers": {
+      "github": {
+        "type": "remote",
+        "disabled": false,
+        "url": "https://api.githubcopilot.com/mcp/",
+        "headers": {
+          "Authorization": "Bearer {file:~/.config/opencode/github_token}"
+        }
       }
     }
   }
