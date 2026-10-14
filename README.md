@@ -6,6 +6,7 @@ Configuracion personal de Neovim, tmux, LazyGit, Git, Starship y Zsh.
 
 - `nvim/`: configuracion completa de Neovim con `lazy.nvim`.
 - `lazygit/config.yml`: configuracion de LazyGit con iconos Nerd Fonts.
+- `opencode/`: configuracion global de OpenCode (plugins, MCP, CLI). El token de GitHub va en la variable `GITHUB_TOKEN`, no en el repo.
 - `git/`: configuracion de Git para separar repos personales y de trabajo.
 - `starship/starship.toml`: configuracion del prompt Starship.
 - `tmux/tmux.conf`: configuracion principal de tmux.
@@ -113,6 +114,35 @@ usarlo como pager.
 ```bash
 brew install git tmux neovim ripgrep fd zsh starship zoxide lazygit git-delta eza
 ```
+
+## OpenCode: token de GitHub
+
+El MCP de GitHub de `opencode/opencode.jsonc` lee el token de la variable de entorno `GITHUB_TOKEN`.
+`api.githubcopilot.com/mcp` no permite OAuth desde OpenCode, asi que el token es obligatorio.
+El token nunca se guarda en este repo.
+
+1. Crea un token en https://github.com/settings/tokens.
+2. Guardalo en `~/.profile`, que no esta versionado:
+
+```bash
+echo 'export GITHUB_TOKEN="tu_token"' >> ~/.profile
+```
+
+3. Cierra sesion y vuelve a entrar, o ejecuta `source ~/.profile`.
+4. Reinicia el servicio de OpenCode desde una terminal que ya tenga la variable:
+
+```bash
+opencode service restart
+```
+
+5. Comprueba la conexion:
+
+```bash
+opencode mcp list
+```
+
+OpenCode corre como servicio en segundo plano y hereda las variables de quien lo arranco.
+Si cambias el token, repite el paso 4.
 
 ## Instalar los dotfiles
 
