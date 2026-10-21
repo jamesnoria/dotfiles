@@ -27,7 +27,13 @@ alias update-aws="bash ~/personal/dotfiles/scripts/update-aws.sh"
 alias ls="eza --icons"
 #alias k="kubecolor"
 alias ports='ss -tulnp | grep "LISTEN"'
-alias t="tmux new-session -A -s devlab"
+t() {
+  if ! tmux has-session -t devlab 2>/dev/null; then
+    tmux new-session -d -s devlab
+    tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh
+  fi
+  tmux attach -t devlab
+}
 alias wifi5="bash ~/personal/dotfiles/scripts/prefer-5g-wifi.sh"
 alias fb='filebrowser -r $(pwd) --noauth -d ~/.filebrowser.db'
 alias go="npm start"
