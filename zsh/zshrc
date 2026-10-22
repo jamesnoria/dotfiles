@@ -12,6 +12,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git
   kubectl
+  nvm
 )
 
 source "$ZSH/oh-my-zsh.sh"
@@ -53,9 +54,46 @@ alias awslog="~/personal/dotfiles/scripts/aws_logs_viewer.sh"
 export PATH="/opt/nvim-linux-x86_64/bin:$PATH"
 
 # === nvm ===
+# The omz `nvm` plugin already sources nvm.sh and its completions, so don't source it again.
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Cheap .nvmrc auto-switch: only invokes nvm when the found .nvmrc (path or content) changes.
+_nvm_rc_key=":"
+# Progress messages only when stderr is a terminal (never in scripts/pipes).
+_nvm_msg() { [[ -t 2 ]] && print -nu2 -- "$1"; }
+_nvm_msgln() { [[ -t 2 ]] && print -u2 -- "$1"; }
+_nvm_rc_switch() {
+  emulate -L zsh
+  local rc raw key version
+  rc="$(nvm_find_nvmrc 2>/dev/null)"
+  raw=""
+  [[ -n "$rc" ]] && raw="$(<"$rc")"
+  version="${raw//[[:space:]]/}"
+  key="${rc}:${version}"
+  [[ "$key" == "$_nvm_rc_key" ]] && return
+
+  if [[ -n "$version" ]]; then
+    _nvm_msg "nvm: cambiando a $version ... "
+    if nvm use --silent "$version" >/dev/null 2>&1; then
+      _nvm_msgln "ok"
+      _nvm_rc_key="$key"
+    else
+      _nvm_msgln "no instalada (ejecuta: nvm install)"
+      _nvm_rc_key="$key"
+    fi
+  else
+    _nvm_msg "nvm: volviendo a default ... "
+    if nvm use default --silent >/dev/null 2>&1; then
+      _nvm_msgln "ok"
+    else
+      _nvm_msgln "sin alias default (nvm alias default <version>)"
+    fi
+    _nvm_rc_key="$key"
+  fi
+}
+autoload -U add-zsh-hook
+add-zsh-hook chpwd _nvm_rc_switch
+_nvm_rc_switch
 
 eval "$(starship init zsh)"
 
