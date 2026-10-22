@@ -241,6 +241,11 @@ sync_neovim_plugins() {
     return
   fi
 
+  # Preferir el Neovim oficial de /opt sobre el de apt (puede ser mas antiguo)
+  if [ -x /opt/nvim-linux-x86_64/bin/nvim ]; then
+    export PATH="/opt/nvim-linux-x86_64/bin:$PATH"
+  fi
+
   if ! command -v nvim >/dev/null 2>&1; then
     warn "Neovim no esta instalado; omito Lazy sync"
     return

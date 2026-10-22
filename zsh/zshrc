@@ -50,7 +50,7 @@ alias oc="opencode"
 alias awslog="~/personal/dotfiles/scripts/aws_logs_viewer.sh"
 
 # === neovim ===
-export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+export PATH="/opt/nvim-linux-x86_64/bin:$PATH"
 
 # === nvm ===
 export NVM_DIR="$HOME/.nvm"
