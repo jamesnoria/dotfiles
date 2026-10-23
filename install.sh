@@ -269,7 +269,7 @@ main() {
   link_path "$DOTFILES_DIR/opencode/opencode.jsonc" "$HOME/.config/opencode/opencode.jsonc"
   link_path "$DOTFILES_DIR/opencode/cli.json" "$HOME/.config/opencode/cli.json"
   link_path "$DOTFILES_DIR/opencode/tui.json" "$HOME/.config/opencode/tui.json"
-  link_path "$DOTFILES_DIR/opencode/instructions.md" "$HOME/.config/opencode/instructions.md"
+  link_path "$DOTFILES_DIR/opencode/AGENTS.md" "$HOME/.config/opencode/AGENTS.md"
   link_path "$DOTFILES_DIR/opencode/plugins/rtk.ts" "$HOME/.config/opencode/plugins/rtk.ts"
   link_path "$DOTFILES_DIR/opencode/opencode-quota/quota-toast.jsonc" "$HOME/.config/opencode/opencode-quota/quota-toast.jsonc"
   link_path "$DOTFILES_DIR/git/gitconfig" "$HOME/.gitconfig"

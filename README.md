@@ -25,7 +25,7 @@ TPM y Lazy se encargan de descargarlos de nuevo.
 
 ```bash
 sudo apt update
-sudo apt install git tmux ripgrep fd-find xclip wl-clipboard zsh curl eza nvim unzip python3.12-venv
+sudo apt install git tmux ripgrep fd-find xclip wl-clipboard zsh curl eza unzip build-essential
 chsh -s "$(command -v zsh)"
 ```
 
