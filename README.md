@@ -33,6 +33,13 @@ En sesiones Wayland, `wl-clipboard` es importante para que Neovim, tmux y apps
 de terminal lean el mismo portapapeles. Si solo esta `xclip`, Neovim puede pegar
 contenido viejo aunque otra app haya copiado texto correctamente.
 
+Neovim y tmux seleccionan `xclip` (o `xsel`) en Linux nativo con X11, aunque
+`wl-clipboard` tambien este instalado. En Wayland usan `wl-copy`/`wl-paste`.
+En WSL o si no se identifica la sesion se conserva la prioridad anterior:
+`wl-clipboard` primero, con los proveedores alternativos disponibles como respaldo.
+En Neovim, `Ctrl+C` copia la seleccion visual o la linea en modo normal;
+`Ctrl+V` pega en modo normal, insercion y visual.
+
 ### NVM
 
 ```bash

@@ -16,8 +16,9 @@ map("n", "<leader>y", "<C-r>", { desc = "Redo" })
 map("v", "<C-c>", '"+y', { desc = "Copy to clipboard" })
 map("n", "<C-c>", '"+yy', { desc = "Copy line to clipboard" })
 
--- Pegar en normal mode
+-- Pegar en normal, visual e insert mode
 map("n", "<C-v>", '"+p', { desc = "Paste from clipboard" })
+map("x", "<C-v>", '"_d"+P', { desc = "Paste from clipboard without yanking replaced text" })
 map("i", "<C-v>", function()
   vim.api.nvim_paste(vim.fn.getreg("+"), true, -1)
 end, { desc = "Paste from clipboard" })
