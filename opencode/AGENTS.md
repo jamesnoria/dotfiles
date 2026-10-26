@@ -7,3 +7,5 @@ Siempre, sin excepcion, corre los tests usando la opcion `--runInBand` (por ejem
 Para correr tests usa por defecto `rtk jest --runInBand` (salida minima, ahorra tokens). Solo si hay fallos, baja a `npx jest --runInBand <archivo>` para ver el detalle del error.
 
 En general, ejecuta los comandos de shell con `rtk` (por ejemplo `rtk git status`, `rtk read`, `rtk ls`, `rtk jest`) porque resume la salida y ahorra tokens. Si la salida resumida no tiene el detalle suficiente para continuar con tu validacion o garantizar tu respuesta, vuelve a ejecutar ese comando de forma nativa (sin `rtk`) y usa solo ahi la salida completa. Esto aplica tambien a la regla de tests: mantén siempre `--runInBand`.
+
+Para cualquier pedido de diagramas (arquitectura, flujo, secuencia, ER, Excalidraw), usa siempre la skill `excalidraw-diagrams`. Guarda todos los archivos generados (spec .json, .excalidraw, .png, .svg) dentro de `.tmp/` en la raiz del proyecto actual; si la carpeta no existe, crea con `mkdir -p .tmp`. No los guardes en otro lugar salvo que el usuario lo pida explicitamente.

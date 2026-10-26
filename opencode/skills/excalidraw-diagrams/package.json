@@ -1,0 +1,1 @@
+{"name":"excalidraw-diagrams","private":true,"type":"module","dependencies":{"@dagrejs/dagre":"^1.1.4","@resvg/resvg-js":"^2.6.2"}}

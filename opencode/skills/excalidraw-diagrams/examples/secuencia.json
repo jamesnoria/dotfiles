@@ -1,0 +1,12 @@
+{
+  "type": "sequence", "title": "Login",
+  "participants": [{"id":"u","label":"Usuario","color":"external"},{"id":"w","label":"Web"},{"id":"a","label":"API"},{"id":"d","label":"DB","color":"data"}],
+  "messages": [
+    {"from":"u","to":"w","label":"envía credenciales"},
+    {"from":"w","to":"a","label":"POST /login"},
+    {"from":"a","to":"d","label":"buscar usuario"},
+    {"from":"d","to":"a","label":"usuario","style":"dashed"},
+    {"from":"a","to":"a","label":"verificar hash"},
+    {"from":"a","to":"w","label":"JWT","style":"dashed"}
+  ]
+}

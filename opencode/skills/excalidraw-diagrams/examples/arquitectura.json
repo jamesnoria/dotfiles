@@ -1,0 +1,76 @@
+{
+ "type": "graph",
+ "direction": "LR",
+ "title": "Arquitectura de ejemplo",
+ "nodes": [
+  {
+   "id": "web",
+   "label": "Web App",
+   "color": "user"
+  },
+  {
+   "id": "api",
+   "label": "API Gateway",
+   "color": "hub"
+  },
+  {
+   "id": "auth",
+   "label": "Auth Service",
+   "color": "backend"
+  },
+  {
+   "id": "orders",
+   "label": "Orders Service",
+   "color": "backend"
+  },
+  {
+   "id": "cache",
+   "label": "Redis",
+   "color": "cache"
+  },
+  {
+   "id": "db",
+   "label": "PostgreSQL",
+   "color": "data"
+  }
+ ],
+ "edges": [
+  {
+   "from": "web",
+   "to": "api",
+   "label": "HTTPS"
+  },
+  {
+   "from": "api",
+   "to": "auth",
+   "label": "valida token"
+  },
+  {
+   "from": "api",
+   "to": "orders"
+  },
+  {
+   "from": "orders",
+   "to": "db",
+   "label": "SQL",
+   "style": "dashed"
+  },
+  {
+   "from": "auth",
+   "to": "cache"
+  }
+ ],
+ "groups": [
+  {
+   "id": "back",
+   "label": "Backend",
+   "nodes": [
+    "auth",
+    "orders",
+    "cache",
+    "db"
+   ],
+   "color": "backend"
+  }
+ ]
+}
