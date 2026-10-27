@@ -7,6 +7,7 @@ Configuracion personal de Neovim, tmux, LazyGit, Git, Starship y Zsh.
 - `nvim/`: configuracion completa de Neovim con `lazy.nvim`.
 - `lazygit/config.yml`: configuracion de LazyGit con iconos Nerd Fonts.
 - `opencode/`: configuracion global de OpenCode (plugins, MCP, CLI). El token de GitHub va en `~/.config/opencode/github_token`, no en el repo.
+- `opencode/skills/`: skills globales de OpenCode, incluida Excalidraw para diagramas.
 - `git/`: configuracion de Git para separar repos personales y de trabajo.
 - `starship/starship.toml`: configuracion del prompt Starship.
 - `tmux/tmux.conf`: configuracion principal de tmux.
@@ -150,6 +151,22 @@ opencode mcp list
 ```
 
 Si cambias el token, repite los pasos 2 y 3.
+
+## OpenCode: skills y Excalidraw
+
+`./install.sh` enlaza `opencode/skills` a `~/.config/opencode/skills` para que
+OpenCode descubra las skills automaticamente, sin configurar rutas absolutas.
+Si ya existe otro archivo o directorio en el destino, se guarda un backup antes
+de crear el enlace.
+
+El instalador ejecuta `npm ci --no-audit --no-fund` en la skill Excalidraw,
+usando su `package-lock.json`. Requiere Node.js y npm disponibles en el `PATH`.
+Si faltan o falla la descarga, muestra un aviso y continua; corrige el problema
+y vuelve a ejecutar `./install.sh`. La instalacion de NVM con `--install-deps`
+no instala por si sola Node.js.
+
+En una sesion abierta de OpenCode puedes usar `/reload` para forzar la recarga
+de las skills. Los diagramas generados se guardan en `.tmp/` del proyecto actual.
 
 ## Instalar los dotfiles
 

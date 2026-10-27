@@ -235,6 +235,22 @@ ensure_tpm() {
   ok "TPM instalado"
 }
 
+install_opencode_skill_dependencies() {
+  local skill_dir="$DOTFILES_DIR/opencode/skills/excalidraw-diagrams"
+
+  if ! command_exists node || ! command_exists npm; then
+    warn "Node.js y npm son necesarios para Excalidraw; instala ambos y vuelve a ejecutar ./install.sh"
+    return
+  fi
+
+  info "Instalando dependencias de la skill Excalidraw"
+  if (cd "$skill_dir" && npm ci --no-audit --no-fund); then
+    ok "Dependencias de Excalidraw instaladas"
+  else
+    warn "No se pudieron instalar las dependencias de Excalidraw; revisa el error y vuelve a ejecutar ./install.sh"
+  fi
+}
+
 sync_neovim_plugins() {
   if [ "$SYNC_NVIM" != true ]; then
     warn "Lazy sync omitido por --no-nvim-sync"
@@ -270,6 +286,7 @@ main() {
   link_path "$DOTFILES_DIR/opencode/cli.json" "$HOME/.config/opencode/cli.json"
   link_path "$DOTFILES_DIR/opencode/tui.json" "$HOME/.config/opencode/tui.json"
   link_path "$DOTFILES_DIR/opencode/AGENTS.md" "$HOME/.config/opencode/AGENTS.md"
+  link_path "$DOTFILES_DIR/opencode/skills" "$HOME/.config/opencode/skills"
   link_path "$DOTFILES_DIR/opencode/plugins/rtk.ts" "$HOME/.config/opencode/plugins/rtk.ts"
   link_path "$DOTFILES_DIR/opencode/opencode-quota/quota-toast.jsonc" "$HOME/.config/opencode/opencode-quota/quota-toast.jsonc"
   link_path "$DOTFILES_DIR/git/gitconfig" "$HOME/.gitconfig"
@@ -281,6 +298,7 @@ main() {
   link_path "$DOTFILES_DIR/zsh/zshrc" "$HOME/.zshrc"
 
   ensure_tpm
+  install_opencode_skill_dependencies
 
   if command -v tmux >/dev/null 2>&1; then
     warn "Dentro de tmux, recarga con: tmux source-file ~/.tmux.conf"
