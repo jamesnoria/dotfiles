@@ -1,0 +1,22 @@
+{
+  "kind": "funcional",
+  "metadata": {
+    "jira": "SIN-JIRA",
+    "title": "Pendiente de confirmar",
+    "date": "2026-01-01",
+    "author": "Pendiente de confirmar",
+    "area": "Fábrica de Siniestros (RIMAC)",
+    "version": "1.0.0",
+    "status": "Finalizado"
+  },
+  "sections": [
+    {"title":"Introducción, Objetivo y Contexto del Negocio","blocks":[{"type":"paragraph","text":"Problema atendido, objetivo, alcance incluido/excluido, situación anterior y beneficio verificable, sin inventar métricas."}]},
+    {"title":"Equipo e Involucrados","blocks":[{"type":"table","headers":["Rol","Nombre","Empresa"],"rows":[["Pendiente de confirmar","Pendiente de confirmar","Pendiente de confirmar"]]}]},
+    {"title":"Actores y Permisos Funcionales","blocks":[{"type":"paragraph","text":"Quién participa, qué puede hacer y bajo qué restricciones de negocio; sin IAM ni políticas técnicas."}]},
+    {"title":"Capacidades y Funcionalidades Implementadas","blocks":[{"type":"heading","text":"5.1. Áreas y procesos impactados"},{"type":"paragraph","text":"Áreas, procesos y sistemas relevantes para el usuario."},{"type":"heading","text":"5.2. Condiciones y reglas de negocio"},{"type":"paragraph","text":"Precondiciones, decisiones, restricciones y excepciones confirmadas."},{"type":"heading","text":"5.3. Funcionalidades implementadas"},{"type":"paragraph","text":"Qué cambia para cada actor y qué resultado obtiene."},{"type":"heading","text":"5.4. Escenarios de aceptación y validación"},{"type":"paragraph","text":"Escenarios normales y alternativos, resultados esperados y estado real de validación."}]},
+    {"title":"Flujo de Negocio","blocks":[{"type":"paragraph","text":"Inicio, participantes, pasos, decisiones, excepciones y resultado final observable, sin funciones internas ni payloads."}]},
+    {"title":"Información Gestionada e Impacto en los Datos","blocks":[{"type":"paragraph","text":"Información que consulta, registra o modifica el proceso y sus efectos para el negocio, sin esquemas físicos ni SQL."}]},
+    {"title":"Interacciones entre Sistemas","blocks":[{"type":"paragraph","text":"Qué información intercambian los sistemas, con qué propósito y qué ocurre si la interacción no puede completarse; sin contratos HTTP."}]},
+    {"title":"Glosario Funcional","blocks":[{"type":"paragraph","text":"Definiciones de términos de negocio usados en el documento, comprensibles sin conocimiento técnico."}]}
+  ]
+}

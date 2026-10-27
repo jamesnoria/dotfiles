@@ -1,0 +1,22 @@
+{
+  "kind": "tecnico",
+  "metadata": {
+    "jira": "SIN-JIRA",
+    "title": "Pendiente de confirmar",
+    "date": "2026-01-01",
+    "author": "Pendiente de confirmar",
+    "area": "Fábrica de Siniestros (RIMAC)",
+    "version": "1.0.0",
+    "status": "Finalizado"
+  },
+  "sections": [
+    {"title":"Introducción y Arquitectura","blocks":[{"type":"paragraph","text":"Describir objetivo, alcance, situación anterior, solución implementada y componentes relacionados, con evidencia."}]},
+    {"title":"Equipo de Trabajo","blocks":[{"type":"table","headers":["Rol","Nombre","Empresa"],"rows":[["Pendiente de confirmar","Pendiente de confirmar","Pendiente de confirmar"]]}]},
+    {"title":"Matriz de Roles y Permisos","blocks":[{"type":"paragraph","text":"Documentar recursos, roles y acciones verificadas; distinguir cambios de permisos existentes."}]},
+    {"title":"Componentes del Desarrollo","blocks":[{"type":"heading","text":"5.1. Catálogo Global / Repositorios"},{"type":"paragraph","text":"Repositorios, módulos, archivos y símbolos modificados, con alcance de commits/diff."},{"type":"heading","text":"5.2. Paquete Técnico / Stack"},{"type":"paragraph","text":"Tecnologías y versiones verificadas en el proyecto."},{"type":"heading","text":"5.3. Funcionalidades Implementadas"},{"type":"paragraph","text":"Cambios implementados, trazabilidad y restricciones."},{"type":"heading","text":"5.4. Pruebas y evidencias"},{"type":"paragraph","text":"Escenarios, pruebas ejecutadas y sus resultados reales, o pendientes."}]},
+    {"title":"Flujo General","blocks":[{"type":"paragraph","text":"Entradas, validaciones, secuencia, salidas, errores, excepciones e impacto operativo. Incluir ejemplos sintéticos si corresponden."}]},
+    {"title":"Diseño de Base de Datos y Almacenamiento","blocks":[{"type":"paragraph","text":"Cambios verificados en modelos, tablas, consultas, migraciones, compatibilidad y almacenamiento; o justificación de no aplicabilidad."}]},
+    {"title":"Diseño de APIs","blocks":[{"type":"paragraph","text":"Endpoints nuevos/modificados frente a servicios existentes consumidos. Contratos, autenticación, respuestas, errores y compatibilidad cuando apliquen."}]},
+    {"title":"Glosario de Términos Técnicos","blocks":[{"type":"paragraph","text":"Definir únicamente términos que aparecen en este informe."}]}
+  ]
+}
